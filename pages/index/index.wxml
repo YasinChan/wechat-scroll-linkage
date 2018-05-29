@@ -4,7 +4,7 @@
   <!-- <view wx:if="{{isTopShow}}" class="mark"></view> -->
   <view class="index">
     <view class="index-left">
-      <scroll-view scroll-y style="height:100vh;" bindscroll="leftScroll" scroll-into-view="{{toView}}">
+      <scroll-view scroll-with-animation="true" scroll-y style="height:100vh;" bindscroll="leftScroll" scroll-top="{{leftToTop}}">
         <view wx:for="{{constants}}" wx:key="id" bindtap="jumpToSick" data-id="{{item.id}}" style="background: {{item.id === currentLeftSelect ? 'red' : ''}}" class="index-left-text">
           <view id="{{item.id}}">
           {{item.name}}
@@ -13,7 +13,7 @@
       </scroll-view>
     </view>
     <view class="index-right">
-      <scroll-view scroll-y style="height: 100vh;" bindscroll="rightScroll" scroll-into-view="{{toView}}" bindscrolltolower="lower">
+      <scroll-view scroll-with-animation="true" scroll-y style="height: 100vh;" bindscroll="rightScroll" scroll-into-view="{{toView}}" bindscrolltolower="lower">
         <view wx:for="{{constants}}" wx:key="id" id="{{item.id}}">
           <!-- <view id="{{item.id}}"> -->
             <view class="index-right-text-top">{{item.name}}</view>

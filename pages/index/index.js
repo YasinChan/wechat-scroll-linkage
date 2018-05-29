@@ -6,7 +6,8 @@ Page({
     constants: [],                // 数据
     toView: null,                 // 左 => 右联动 右scroll-into-view 所需的id
     currentLeftSelect: null,      // 当前左侧选择的
-    eachRightItemToTop: []        // 右侧每类数据到顶部的距离（用来与 右 => 左 联动时监听右侧滚动到顶部的距离比较）
+    eachRightItemToTop: [],       // 右侧每类数据到顶部的距离（用来与 右 => 左 联动时监听右侧滚动到顶部的距离比较）
+    leftToTop: 0
   },
   onLoad: function (options) {
     this.setData({
@@ -28,12 +29,14 @@ Page({
     return obj
   },
   rightScroll: function (e) {   // 监听右侧的滚动事件与 eachRightItemToTop 的循环作对比 从而判断当前可视区域为第几类，从而渲染左侧的对应类。
+    const LEFT_ITEM_HEIGHT = 30
     for (let i = 0; i < this.data.constants.length; i++) {
       let left = this.data.eachRightItemToTop[this.data.constants[i].id]
       let right = this.data.eachRightItemToTop[this.data.constants[i + 1] ? this.data.constants[i+1].id : 'last']
       if (e.detail.scrollTop < right && e.detail.scrollTop >= left) {
         this.setData({
-          currentLeftSelect: this.data.constants[i].id
+          currentLeftSelect: this.data.constants[i].id,
+          leftToTop: LEFT_ITEM_HEIGHT * i
         })
       }
     }

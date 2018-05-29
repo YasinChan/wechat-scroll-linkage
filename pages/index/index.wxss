@@ -28,6 +28,8 @@
 
 .index-left-text {
   padding: 20rpx 10rpx;
+  height: 30px;
+  line-height: 30px;
 }
 
 .index-right-text {
