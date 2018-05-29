@@ -1,0 +1,54 @@
+.container {
+  position: relative;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.index {
+  display: flex;
+}
+
+.index-top {
+  height: 200px;
+}
+
+.index-left {
+  flex: 1;
+  background: #f5f7f9;
+}
+
+.index-right {
+  flex: 3;
+}
+
+.index-left-text {
+  padding: 20rpx 10rpx;
+}
+
+.index-right-text {
+  box-sizing: border-box;
+  padding: 40rpx 10rpx;
+  height: 60px;
+}
+
+.index-right-text-top {
+  height: 40rpx;
+  background: #f5f7f9;
+}
+
+.mark {
+  position: absolute;
+  top: 200px;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+
+.index-right-text-top {
+  height: 20px;
+}
