@@ -5,5 +5,7 @@
 左边栏点击 button 右侧会跟随滚动到对应的区域；
 右测滚动，左侧也会滚动到对应的 button ；
 
+演示如下：
+
 
 ![image](https://github.com/YasinChan/wechat-scroll-linkage/blob/master/images/scroll.gif)
