@@ -27,9 +27,9 @@
 }
 
 .index-left-text {
-  padding: 20rpx 10rpx;
-  height: 30px;
-  line-height: 30px;
+  padding: 0 10rpx;
+  height: 50px;
+  line-height: 50px;
 }
 
 .index-right-text {

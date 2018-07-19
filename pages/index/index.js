@@ -29,7 +29,7 @@ Page({
     return obj
   },
   rightScroll: function (e) {   // 监听右侧的滚动事件与 eachRightItemToTop 的循环作对比 从而判断当前可视区域为第几类，从而渲染左侧的对应类。
-    const LEFT_ITEM_HEIGHT = 30
+    const LEFT_ITEM_HEIGHT = 50
     for (let i = 0; i < this.data.constants.length; i++) {
       let left = this.data.eachRightItemToTop[this.data.constants[i].id]
       let right = this.data.eachRightItemToTop[this.data.constants[i + 1] ? this.data.constants[i+1].id : 'last']
