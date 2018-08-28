@@ -25,10 +25,10 @@ git clone https://github.com/YasinChan/wechat-scroll-linkage.git
 
    ![image](https://github.com/YasinChan/wechat-scroll-linkage/blob/master/images/image1.png)
 
-3. 在 onload 阶段，我们需要获取每个右侧的 bar 到顶部的距离，用来做后面的计算。
+3. 在 onload 阶段，我们需要获取每个右侧分类的 RIGHT_BAR 到顶部的距离，用来做后面的计算。
 
    ```
-   getEachRightItemToTop: function () {  // 获取每个右侧的 bar 到顶部的距离，用来做后面的计算。
+   getEachRightItemToTop: function () {  // 获取每个右侧的 RIGHT_BAR 到顶部的距离，用来做后面的计算。
        var obj = {};
        var totop = 0;
        obj[constants[0].id] = totop      // 右侧第一类肯定是到顶部的距离为 0
@@ -46,7 +46,7 @@ git clone https://github.com/YasinChan/wechat-scroll-linkage.git
    1. 为左侧列表添加`bindtap`事件，使右侧滚动到相应的位置
 
       ```
-      jumpTo: function (e) {    // 左侧类的点击事件，点击时，右侧会滚动到对应分类
+      jumpTo: function (e) {    // 左侧 LEFT_ITEM 的点击事件，点击时，右侧会滚动到对应 RIGHT_BAR
           this.setData({
               toView: e.target.id || e.target.dataset.id,
               currentLeftSelect: e.target.id || e.target.dataset.id
@@ -57,7 +57,7 @@ git clone https://github.com/YasinChan/wechat-scroll-linkage.git
    2. 为右侧添加`bindscroll`事件，用来监听右侧滚动事件，来使左侧列表响应，滚动到相应位置
 
       ```
-      rightScroll: function (e) {   // 监听右侧的滚动事件与 eachRightItemToTop 的循环作对比 从而判断当前可视区域为第几类，从而渲染左侧的对应类。
+      rightScroll: function (e) {   // 监听右侧的滚动事件与 eachRightItemToTop 的循环作对比 从而判断当前可视区域为第几类，从而左侧滚动到对应 LEFT_ITEM。
           for (let i = 0; i < this.data.constants.length; i++) {
             let left = this.data.eachRightItemToTop[this.data.constants[i].id]
             let right = this.data.eachRightItemToTop[this.data.constants[i + 1] ? this.data.constants[i+1].id : 'last']
