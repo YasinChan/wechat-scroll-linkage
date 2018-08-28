@@ -23,7 +23,7 @@ git clone https://github.com/YasinChan/wechat-scroll-linkage.git
 
 2. 首先需要设置常量，如下图
 
-   ![image](https://github.com/YasinChan/wechat-scroll-linkage/blob/master/images/image.png)
+   ![image](https://github.com/YasinChan/wechat-scroll-linkage/blob/master/images/image1.png)
 
 3. 在 onload 阶段，我们需要获取每个右侧的 bar 到顶部的距离，用来做后面的计算。
 
