@@ -1,11 +1,9 @@
 <!-- index.wxml -->
 <view class="container">
-  <!-- <view class="index-top">眼病筛查</view> -->
-  <!-- <view wx:if="{{isTopShow}}" class="mark"></view> -->
   <view class="index">
     <view class="index-left">
-      <scroll-view scroll-with-animation="true" scroll-y style="height:100vh;" bindscroll="leftScroll" scroll-top="{{leftToTop}}">
-        <view wx:for="{{constants}}" wx:key="id" bindtap="jumpToSick" data-id="{{item.id}}" style="background: {{item.id === currentLeftSelect ? 'red' : ''}}" class="index-left-text">
+      <scroll-view scroll-with-animation="true" scroll-y style="height:100vh;" scroll-top="{{leftToTop}}">
+        <view wx:for="{{constants}}" wx:key="id" bindtap="jumpTo" data-id="{{item.id}}" style="background: {{item.id === currentLeftSelect ? 'red' : ''}}" class="index-left-text">
           <view id="{{item.id}}">
           {{item.name}}
           </view>
@@ -15,12 +13,10 @@
     <view class="index-right">
       <scroll-view scroll-with-animation="true" scroll-y style="height: 100vh;" bindscroll="rightScroll" scroll-into-view="{{toView}}" bindscrolltolower="lower">
         <view wx:for="{{constants}}" wx:key="id" id="{{item.id}}">
-          <!-- <view id="{{item.id}}"> -->
-            <view class="index-right-text-top">{{item.name}}</view>
-            <view class="index-right-text" wx:for="{{item.category}}" wx:key="category_id">
-              {{item.category_name}}
-            </view>
-          <!-- </view> -->
+          <view class="index-right-text-top">{{item.name}}</view>
+          <view class="index-right-text" wx:for="{{item.category}}" wx:key="category_id">
+            {{item.category_name}}
+          </view>
         </view>
       </scroll-view>
     </view>
