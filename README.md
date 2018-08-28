@@ -21,7 +21,7 @@ git clone https://github.com/YasinChan/wechat-scroll-linkage.git
 
    目前我将需要渲染的数据以 json 的形式保存在`./utils/constants.js`中可参考
 
-2. 首先需要设置常量，如下图
+2. 首先需要设置常量，如下图，各个位置暂时命名为 `LEFT_ITEM` `RIGHT_BAR` `RIGHT_ITEM`
 
    ![image](https://github.com/YasinChan/wechat-scroll-linkage/blob/master/images/image1.png)
 
