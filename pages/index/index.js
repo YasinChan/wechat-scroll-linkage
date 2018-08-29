@@ -28,7 +28,6 @@ Page({
       totop += (RIGHT_BAR_HEIGHT + constants[i-1].category.length * RIGHT_ITEM_HEIGHT)
       obj[constants[i] ? constants[i].id : 'last'] = totop    // 这个的目的是 例如有两类，最后需要 0-1 1-2 2-3 的数据，所以需要一个不存在的 'last' 项，此项即为第一类加上第二类的高度。
     }
-    debugger;
     return obj
   },
   rightScroll: function (e) {   // 监听右侧的滚动事件与 eachRightItemToTop 的循环作对比 从而判断当前可视区域为第几类，从而渲染左侧的对应类。
